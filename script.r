@@ -107,7 +107,7 @@ findFreqFromDates = function(dates, targetS = "autodetect from date")
 {
   freq = 1
   N = length(dates)
-  nnn = c("hour", "day", "week", "month", "quarter", "year")
+  nnn = c("hour", "day", "week", "month", "quater", "year")
   seasons = rep(NaN,6)
   names(seasons) = nnn
   perSeason = seasons
@@ -117,7 +117,7 @@ findFreqFromDates = function(dates, targetS = "autodetect from date")
   seasons["week"] = round(as.numeric(difftime(dates[length(dates)], dates[1]), units="weeks"))
   seasons["month"] = seasons["day"] / 30
   seasons["year"] = seasons["day"] / 365.25
-  seasons["quarter"] = seasons["year"] * 4
+  seasons["quater"] = seasons["year"] * 4
   
   perSeason = N/seasons
   
